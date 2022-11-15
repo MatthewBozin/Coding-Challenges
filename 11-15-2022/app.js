@@ -4,7 +4,7 @@
 // [5, 8, 6, 3, 4]  =>  [3, 8, 6, 5, 4]
 // [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]  =>  [1, 8, 3, 6, 5, 4, 7, 2, 9, 0]
 
-const sortArray = (arr) => {
+const sortArrayOrig = (arr) => {
     //get array of all odd numbers
     //sort that array
     let odds = arr.filter(n => n % 2 !== 0).sort((a, b) => a - b)
@@ -14,6 +14,11 @@ const sortArray = (arr) => {
         return odds.shift()
     })
     
+}
+
+const sortArray = (arr) => {
+    let odds = arr.filter(n => n % 2).sort((a, b) => a - b)
+    return arr.map((n) => n % 2 === 0 ? n : odds.shift())
 }
 
 //first tryyyyyy
