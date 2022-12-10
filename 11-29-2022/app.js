@@ -14,6 +14,8 @@ const dup = arr => arr.map(str => {
     }).join('')
 })
 
+const dupOptimized = arr => arr.map(str => [...str].filter(l, i, a => l != a[i-1]).join(''))
+
 console.log(dup(["ccooddddddewwwaaaaarrrrsssss","piccaninny","hubbubbubboo"]),['codewars','picaniny','hubububo'])
 console.log(dup(["abracadabra","allottee","assessee"]),['abracadabra','alote','asese'])
 console.log(dup(["kelless","keenness"]), ['keles','kenes'])
